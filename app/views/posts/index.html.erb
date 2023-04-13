@@ -24,6 +24,19 @@
                 <% end %>
             </div>
             <div class="card-footer text-muted">
+              <div class="pl-5 py-2">
+                <div class="col-12 mt-3" id="new-comment">
+                  <%= render 'comments/form', object: post %>
+                </div>
+              </div>
+
+              <ul id="tweet-<%= post.id %>-comments-container">
+                <% post.comments.last(3).reverse.each do |comment| %>
+                  <li><%= comment.description %></li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="card-footer text-muted">
               <%= post.created_at %>
             </div>
             </p>

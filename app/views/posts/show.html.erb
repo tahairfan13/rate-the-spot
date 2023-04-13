@@ -19,6 +19,21 @@
               <% end %>
             </p>
           </div>
+            <div class="col-12 mt-3" id="new-comment">
+              <%= render 'comments/form', object: @post %>
+            </div>
+            <div class="card-footer text-muted">
+              <ul id="tweet-<%= @post.id %>-comments-container">
+                <% @post.comments.reverse.each do |comment| %>
+                  <li class="mb-3">
+
+                    <%= render 'comments/show_comment', object: comment %>
+
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

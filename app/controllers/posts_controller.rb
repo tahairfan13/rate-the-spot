@@ -3,9 +3,11 @@ class PostsController < ApplicationController
   before_action :require_user, except: [:show, :index]
 
   def show
+    @comment = Comment.new
   end
   def index
     @posts = Post.all
+    @comment = Comment.new
   end
   def new
     @post = Post.new

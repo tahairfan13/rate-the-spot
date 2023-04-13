@@ -1,0 +1,5 @@
+<li class="mb-3 px-1"><%= object.description %>
+  <span><%= link_to image_tag("delete.svg", height: 25), comment_path(object), class:"px-3",
+                    remote: true, data: { "turbo-method": :delete } %>
+  </span>
+</li>
