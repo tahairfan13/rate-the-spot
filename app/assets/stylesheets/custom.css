@@ -1,0 +1,39 @@
+.navbar {
+  background-color: black !important;
+}
+.nav-link {
+  color: white !important;
+}
+#logo {
+  color: #fff;
+  float: left;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+#map {
+  height: 100%;
+}
+
+.jumbotron {
+  background-image: url("home_page.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+#sign {
+  background-color: black;
+  color: green;
+}
+.nav-item {
+  color: white;
+}
+#sign:hover {
+  background-color: white;
+}
+#toggle {
+
+  background-color: white;
+}
