@@ -12,8 +12,9 @@
   letter-spacing: -1px;
   font-weight: bold;
 }
-#map {
-  height: 100%;
+.map {
+  width: 100%;
+  min-height: 400px;
 }
 
 .jumbotron {

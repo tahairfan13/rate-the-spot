@@ -6,22 +6,8 @@
   <div class="container">
     <div class="row">
       <div class="text-center  bg-info bg-gradient col-10" style="height: 400px">
-        <%= form_with(model: @post, local: true) do |f| %>
-          <div class="form-group-row">
-            <%= f.label :name, class: "col-1 col-form-label text-left" %>
-            <%= f.text_field :name, class: "col-6 col-form-label" %>
-          </div>
-          <br>
-          <div class="form-group-row">
-            <%= f.label :latitude, class: "col-2 col-form-label align-top" %>
-            <%= f.text_area :latitude, rows: 8, class: "col-8 col-form-label" %>
-          </div>
-          <div class="form-group-row">
-            <%= f.submit class: "btn btn-outline-light btb-lg" %>
-          </div>
-        <% end %>
+        <%= render 'posts/form' %>
       </div>
     </div>
   </div>
 </div>
-

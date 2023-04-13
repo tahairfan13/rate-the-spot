@@ -15,12 +15,12 @@
             </div>
             <div class="card-body">
               <h5 class="card-title"><%= post.name %></h5>
-              <p class="card-text"><%= post.langitude %></p>
+              <p class="card-text"><%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&center=#{post.latitude},#{post.longitude}&key=#{Rails.application.credentials[:google_maps_api_key]}", alt: "Map" %></p>
               <p>
                 <%= link_to 'Show', post_path(post), class:"btn btn-outline-primary" %>
                 <% if logged_in? && post.user == current_user %>
                   <%= link_to 'Edit', edit_post_path(post), class:"btn btn-outline-success" %>
-                  <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-outline-danger" %>
+                  <%= link_to 'Delete', post, data: { "turbo-method": :delete }, class:"btn btn-outline-danger" %>
                 <% end %>
             </div>
             <div class="card-footer text-muted">
@@ -29,6 +29,7 @@
             </p>
           </div>
         <% end %>
+        <div id="map" data-controller="map"></div>
       </div>
     </div>
   </div>

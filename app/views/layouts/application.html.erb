@@ -8,6 +8,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials[:google_maps_api_key]}&libraries=places&callback=dispatchMapsEvent",
+                               async: true,
+                               defer: true,
+                               "data-turbolinks-eval": false %>
+    <%= yield :head %>
   </head>
 
   <body>

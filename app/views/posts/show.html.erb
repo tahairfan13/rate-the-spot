@@ -10,11 +10,11 @@
             </div>
           <div class="card-body">
             <h5 class="card-title"><%= @post.name %></h5>
-            <p class="card-text"><%= @post.longitude %></p>
+            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&center=#{@post.latitude},#{@post.longitude}&key=#{Rails.application.credentials[:google_maps_api_key]}", alt: "Map" %>
             <p>
               <% if logged_in? && (@post.user == current_user) %>
                 <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-outline-success" %>
-                <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: "Are you sure?"},
+                <%= link_to 'Delete', post_path(@post), data: { "turbo-method": :delete },
                             class:"btn btn-outline-danger" %>
               <% end %>
             </p>
