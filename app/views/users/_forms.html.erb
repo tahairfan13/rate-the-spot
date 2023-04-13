@@ -1,0 +1,28 @@
+<div class="p-3 mb-2 bg-light text-dark">
+  <div class="container ">
+    <div class="row">
+      <div class="text-center  bg-info bg-gradient col-10" style="height: 400px" ;>
+      <%= render 'users/errors', obj: @user %>
+        <%= form_with(model: @user, local: true) do |f| %>
+          <div class="form-group-row">
+            <%= f.label :username, class: "col-2 col-form-label text-left" %>
+            <%= f.text_field :username, class: "col-4 col-form-label", placeholder: "Enter username" %>
+          </div>
+          <div class="form-group-row">
+            <%= f.label :email, class: "col-2 col-form-label align-top" %>
+            <%= f.email_field :email, rows: 8, class: "col-4 col-form-label", placeholder: "Enter E-mail" %>
+          </div>
+          <div class="form-group-row">
+            <%= f.label :password, class: "col-2 col-form-label align-top" %>
+            <%= f.password_field :password, rows: 8, class: "col-4 col-form-label", placeholder: "Enter Password" %> <br>
+          </div>
+          <br>
+          <div class="form-group-row">
+            <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-outline-light btn-lg") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

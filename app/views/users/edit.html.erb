@@ -1,0 +1,13 @@
+<h1 class="text-center mt-4">Edit your profile</h1>
+<%= render 'users/forms' %>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-default"><%= link_to "Delete profile",
+                                                  user_path(current_user), class: "btn btn-danger text-info",
+                                                  method: :delete, data: { confirm: "Are you sure?" } %>
+      </button>
+    </div>
+  </div>
+</div>
+

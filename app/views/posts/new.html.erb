@@ -1,0 +1,25 @@
+<div class="p-3 mb-2 bg-light text-dark">
+  <h2 class="text-center">Create New Post</h2>
+  <p class="text-center"><%= render 'posts/errors' %></p>
+  <div class="container ">
+    <div class="row">
+      <div class="text-center  bg-info bg-gradient col-10" style="height: 400px" ;>
+        <%= form_with scope: :post, url: posts_path, local: true do |f| %>
+          <div class="form-group-row">
+            <%= f.label :name, class: "col-1 col-form-label text-left" %>
+            <%= f.text_field :name, class: "col-6 col-form-label" %>
+          </div>
+          <br>
+          <div class="form-group-row">
+            <%= f.label :longitude, class: "col-2 col-form-label align-top" %>
+            <%= f.text_area :longitude, rows: 8, class: "col-8 col-form-label" %>
+          </div>
+          <div class="form-group-row">
+            <%= f.submit class: "btn btn-outline-light btb-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

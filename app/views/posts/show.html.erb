@@ -1,0 +1,28 @@
+<div class="p-3 mb-2 bg-light text-dark">
+  <h2 class="text-center">posts details </h2>
+  <p class="text-center">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded container ">
+      <div class="row justify-content-md-center">
+        <div class="col align-self-center">
+          <div class="card text-center">
+            <div class="card-header">
+              <%= @post.user.username if @post.user %>
+            </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= @post.name %></h5>
+            <p class="card-text"><%= @post.longitude %></p>
+            <p>
+              <% if logged_in? && (@post.user == current_user) %>
+                <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-outline-success" %>
+                <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: "Are you sure?"},
+                            class:"btn btn-outline-danger" %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
